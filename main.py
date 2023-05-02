@@ -17,8 +17,12 @@ class Converter():
         self.XMLconverterCSV = XMLcsv()
         self.CSVconverterJSON = CSVjson()
 
+        self.input_path = None
+        self.output_path = None
+
     def user_interface(self):
         print("hello user")
+        # set self.output_path and self.input_path
 
     def run(self):
         # hier Benutzerschnittstelle 
@@ -27,12 +31,12 @@ class Converter():
         self.user_interface()
 
         # Dateityp verarbeiten und aufgrund dessen die entsprechende Methode der importierten Converter aufrufen
-        self.JSONconverterXML.JSONtoXML()
-        self.JSONconverterXML.XMLtoJSON()
-        self.XMLconverterCSV.XMLtoCSV()
-        self.XMLconverterCSV.CSVtoXML()
-        self.CSVconverterJSON.CSVtoJSON()
-        self.CSVconverterJSON.JSONtoCSV()
+        self.JSONconverterXML.JSONtoXML(self.input_path, self.output_path)
+        self.JSONconverterXML.XMLtoJSON(self.input_path, self.output_path)
+        self.XMLconverterCSV.XMLtoCSV(self.input_path, self.output_path)
+        self.XMLconverterCSV.CSVtoXML(self.input_path, self.output_path)
+        self.CSVconverterJSON.CSVtoJSON(self.input_path, self.output_path)
+        self.CSVconverterJSON.JSONtoCSV(self.input_path, self.output_path)
 
 
 if __name__ == "__main__":
